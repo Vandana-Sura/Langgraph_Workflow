@@ -1,56 +1,35 @@
-/* static/styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Task Workflow System</h1>
+        </div>
+    </header>
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
+    <div class="container">
+        <div class="results">
+            <h2>Results:</h2>
+            <ul>
+                {% for result in results %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
 
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 10px;
-    min-height: 70px;
-    border-bottom: #bbb 1px solid;
-}
+            <h2>Feedback:</h2>
+            <ul>
+                {% for feedback in feedbacks %}
+                    <li>{{ feedback }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
 
-header h1 {
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 24px;
-}
-
-form {
-    margin: 20px 0;
-}
-
-input[type="text"] {
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background: #333;
-    color: #fff;
-    border: 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.results {
-    margin: 20px 0;
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
