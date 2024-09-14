@@ -6,8 +6,7 @@ from reflection import Reflection
 
 app = Flask(__name__)
 
-# Define LangGraph, PlanAgent, ToolAgent, and Reflection classes as before
-
+# Initialize components
 lang_graph = LangGraph()
 plan_agent = PlanAgent(lang_graph)
 tool_agent = ToolAgent(lang_graph)
@@ -36,4 +35,3 @@ def process_query():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
