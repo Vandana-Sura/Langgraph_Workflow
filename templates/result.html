@@ -1,0 +1,35 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Task Workflow System</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="results">
+            <h2>Results:</h2>
+            <ul>
+                {% for result in results %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Feedback:</h2>
+            <ul>
+                {% for feedback in feedbacks %}
+                    <li>{{ feedback }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
